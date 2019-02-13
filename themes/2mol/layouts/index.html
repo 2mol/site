@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}">
+<head>
+    <meta charset="utf-8">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/default.css">
+    <link rel="favicon" type="image/ico" href="favicon.ico" />
+    {{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+    {{ with .Site.Params.author }}<meta name="author" content="{{ . }}">{{ end }}
+</head>
+<body style="margin:0">
+    <header>
+        <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+        <nav>
+        <ul>
+        {{ range .Site.Menus.main }}
+        <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+        {{ end }}
+        </ul>
+        </nav>
+    </header>
+
+We all know that Motherfucking Website ― MFW ― it's grotesque pile of shit. And we also know that Better Motherfucking Website ― BMFW ― improved the Ass-Blastered Crap into an (almost) easy-to-read masterpiece. But I made it even better! Like the other motherfucking websites, Even Better Motherfucking Website ― EBMFW ―, has all of the glory that the original, 'perfect-ass' website has - along with some improvements from the BMFW:
+<footer>
+    <p>&copy; {{ now.Year }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></p>
+</footer>
+</body>
+</html>
