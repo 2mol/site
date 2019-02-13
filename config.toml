@@ -3,3 +3,10 @@ languageCode = "en-us"
 title = "not even a boat"
 
 theme="2mol"
+
+# code highlighting
+pygmentsStyle = "trac"
+pygmentsUseClasses = false
+pygmentsCodeFences = true
+pygmentsCodefencesGuessSyntax = true
+
