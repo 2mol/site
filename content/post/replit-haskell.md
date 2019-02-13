@@ -1,16 +1,18 @@
 ---
 title: "Build Haskell stuff in your browser"
-date: 2019-02-13
+date: 2019-02-13T15:16:55Z
 draft: true
 ---
 
 # Build Haskell stuff in your browser
+
 
 ## Too long; didn't read
 
 - You can write and execute non-trivial Haskell on [repl.it](https://repl.it/), meaning that you can skip setting up a local development environment.
 - It secretly includes not just `base`, but couple of other useful libraries.
 - You can write command-line programs and have them _automatically_ served up on the web.
+
 
 ## What's an online REPL?
 
@@ -21,6 +23,7 @@ Repl.it is my favourite, in part because it's very well executed, in part becaus
 > Sidenote: I was very skeptical at first because an online programming environment doesn't seem Very Serious(TM). After finding myself using it for quick teaching demos and experiments, I've come around to the realization that it's actually _amazing_ to just get started coding without having to set anything up. Especially for beginners. You can still install stack or cabal afterwards, no rush.
 >
 > Side-sidenote: Even better, multiple people can join the same editor together and all edit at the same time, which is insanely cool. Get some friends and click the "multiplayer" button.
+
 
 ## The libraries nobody told you about
 
@@ -77,5 +80,5 @@ Just some of the basic highlights:
 
 That's it for now. It would be great to have more libraries of course. For example to have `wreq` to make network requests, or some sort of graphics package would go a long way to make more useful programs. With a bit of luck and enough interest I'm sure repl.it can be convinced to include more packages. For example, I asked them over [twitter](https://twitter.com/replit) if they could update GHC from 8.0.x to 8.6.3 in the next couple of months, and they literally did that within an afternoon. Amazing.
 
-Go make some cool things and share them on [r/haskell](https://old.reddit.com/r/haskell/) or come ask questions in the #haskell channel on the [functional programming discord](https://discord.me/fp).
+Go make some cool things, share them on [r/haskell](https://old.reddit.com/r/haskell/), and/or come ask questions in the #haskell channel on the [functional programming discord](https://discord.me/fp).
 
