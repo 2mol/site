@@ -1,7 +1,6 @@
 ---
-title: "Build Haskell stuff in your browser"
+title: "Build Haskell stuff in your browser "
 date: 2019-02-13T15:16:55Z
-draft: true
 ---
 
 ## tl;dr
@@ -63,8 +62,9 @@ xhtml-3000.2.2.1
 
 FUN. I don't know about you, but at this point I get pretty excited, since this means that we can write a lot more serious stuff than I had initially realized.
 
-For example, we can write entire interactive command-line programs that repl.it will serve on those `https://[replname].[username].repl.run` domains.
-Just some of the basic highlights:
+For example, we can write entire interactive command-line programs that repl.it will serve on those `https://[replname].[username].repl.run` domains. [Here](https://haskeline-example.2mol.repl.run/) is an example I copied from the `haskeline` documentation.
+
+If you're not familiar with the libraries above, here's an incomplete overview:
 
 - The great [`containers`](https://hackage.haskell.org/package/containers) lets you use `Set`, `Map`, `Graph`, and `Tree`. The first two are especially nice if you're used to dictionaries and sets from other languages.
 - The low-level [`array`](https://hackage.haskell.org/package/array) gives you a structure that is faster than list for accessing elements at an arbitrary index.
@@ -74,7 +74,47 @@ Just some of the basic highlights:
 - [`template-haskell`](https://hackage.haskell.org/package/template-haskell) is how you write Haskell that writes Haskell.
 - [`filepath`](https://hackage.haskell.org/package/filepath) and [`directory`](https://hackage.haskell.org/package/directory) let you interact with the file system, which repl.it _totally lets you do_!
 
-That's it for now, figure out the other libraries yourself. It would obviously be great to have more. For example to have [`wreq`](https://hackage.haskell.org/package/wreq) to make network requests, or some graphics package do create images or draw on the DOM. With a bit of luck and enough interest I'm sure repl.it can be convinced to include more packages. Before discovering all this, I messaged them on their [twitter](https://twitter.com/replit) to ask if they could update GHC from 8.0.x to 8.6.3 in the coming year, and they literally did it within an afternoon. Amazing.
+That's it for now, figure out the other libraries yourself. It would obviously be great to have more. For example to have [`wreq`](https://hackage.haskell.org/package/wreq) to make network requests, or some graphics package do create images or draw on the DOM.
 
-What next? Use [`haskeline`](https://hackage.haskell.org/package/haskeline) and go write a clone of [Zork](https://en.wikipedia.org/wiki/Zork)! Make some other cool things, share them on [r/haskell](https://old.reddit.com/r/haskell/), and/or come ask questions in the #haskell channel on the [functional programming discord](https://discord.me/fp).
+With enough interest I'm sure repl.it can be convinced to include more packages. Before discovering all this, I messaged them on their [twitter](https://twitter.com/replit) to ask if they could update GHC from 8.0.x to 8.6.3 in the coming year, and they literally did it within an afternoon. Amazing.
+
+## What now?
+
+Build stuff, now that you have no more excuses. Work through the exercises from [Haskell Programming from first principles](http://haskellbook.com/) (paid, but very worth it), or [Learn You a Haskell](http://learnyouahaskell.com/) (free and utterly charming).
+
+Use [`haskeline`](https://hackage.haskell.org/package/haskeline) and go write a clone of [Zork](https://en.wikipedia.org/wiki/Zork). Do whatever! Share what you make on [r/haskell](https://old.reddit.com/r/haskell/), and come ask questions in the #haskell channel on the [functional programming discord](https://discord.me/fp).
+
+Here is a code snippet so that you don't get bored in the meantime. Save it into a new file in repl.it, hit run and load up the module with something like `:l Entropy.hs`.
+
+```haskell
+{-# LANGUAGE ScopedTypeVariables #-}
+
+module Entropy where
+
+import           Data.Map.Strict (Map)
+import qualified Data.Map.Strict as M
+
+-- tally the number of occurrences of all the items in a list:
+count :: forall a . Ord a => [a] -> Map a Int
+count elements =
+    foldl addCount M.empty elements
+    where
+        addCount :: Map a Int -> a -> Map a Int
+        addCount counter el = M.insertWith (+) el 1 counter
+
+-- calculate which element occurs which percentage of the time
+proportions :: Ord a => [a] -> [Double]
+proportions xs =
+    [c / n | c' <- counts, let c = fromIntegral c']
+    where
+        counts = M.elems (count xs)
+
+        n = fromIntegral $ length xs
+
+-- entropy measure
+-- https://en.wikipedia.org/wiki/Entropy#Statistical_mechanics
+entropy :: Ord a => [a] -> Double
+entropy xs =
+    -sum [p * logBase 2 p | p <- proportions xs]
+```
 
