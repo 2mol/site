@@ -17,7 +17,7 @@ For those that don't know, [repl.it](https://repl.it) is one of many online [REP
 
 Repl.it great, not least because it started providing a [Haskell environment](https://repl.it/site/blog/haskell) two years ago.
 
-> sidenote: I was skeptical of online programming environments at first, since they seemed toy-like. However, a) young kids are building really impressive things in them and b) I intinctively started reaching for one myself for quick demos and experiments. Beginners can still install stack or cabal afterwards, no rush.
+> sidenote: I was skeptical of online programming environments at first, since the idea sounds a bit gimmicky. I changed my mind after seeing how many children build really impressive things in them, and how joyful it feels to use one for quick demos and experiments. It's really easy to send somebody a code snippet that just executes, zero friction. Beginners can still install stack or cabal afterwards, no rush.
 >
 > side-sidenote: repl.it has this feature where multiple people can join the same editor and all edit at the same time, which is insanely cool. Get some friends and click the "multiplayer" button.
 
@@ -66,15 +66,15 @@ FUN. I don't know about you, but at this point I get pretty excited, since this 
 For example, we can write entire interactive command-line programs that repl.it will serve on those `https://[replname].[username].repl.run` domains.
 Just some of the basic highlights:
 
-- The great `containers` lets you use `Set`, `Map`, `Graph`, and `Tree`. The first two are especially nice if you're used to dictionaries and sets from other languages.
-- The low-level `array` gives you a structure that is faster than list for accessing elements at an arbitrary index.
-- `parsec` is your entry ticket into the world of ~~parser-combinators~~ INDUSTRIAL-STRENGTH PARSER COMBINATORS.
-- `text` and `bytestring` replace `String` as the proper way to do either user-readable strings or binary data respectively.
-- `mtl` is how [people cooler than me](https://www.parsonsmatt.org/2018/03/22/three_layer_haskell_cake.html) structure big-boy programs.
-- `template-haskell` is how you write Haskell that writes Haskell.
-- `filepath` and `directory` let you interact with the file system, which repl.it _totally lets you do_!
+- The great [`containers`](https://hackage.haskell.org/package/containers) lets you use `Set`, `Map`, `Graph`, and `Tree`. The first two are especially nice if you're used to dictionaries and sets from other languages.
+- The low-level [`array`](https://hackage.haskell.org/package/array) gives you a structure that is faster than list for accessing elements at an arbitrary index.
+- [`parsec`](https://hackage.haskell.org/package/parsec) is your entry ticket into the world of ~~parser-combinators~~ INDUSTRIAL-STRENGTH PARSER COMBINATORS.
+- [`text`](https://hackage.haskell.org/package/text) and [`bytestring`](https://hackage.haskell.org/package/bytestring) replace `String` as the proper way to do either user-readable strings or binary data respectively.
+- [`mtl`](https://hackage.haskell.org/package/mtl) is how [people cooler than me](https://www.parsonsmatt.org/2018/03/22/three_layer_haskell_cake.html) structure big-boy programs.
+- [`template-haskell`](https://hackage.haskell.org/package/template-haskell) is how you write Haskell that writes Haskell.
+- [`filepath`](https://hackage.haskell.org/package/filepath) and [`directory`](https://hackage.haskell.org/package/directory) let you interact with the file system, which repl.it _totally lets you do_!
 
-That's it for now. It would be great to have more libraries of course. For example to have `wreq` to make network requests, or some sort of graphics package would go a long way to make more useful programs. With a bit of luck and enough interest I'm sure repl.it can be convinced to include more packages. For example, I asked them over [twitter](https://twitter.com/replit) if they could update GHC from 8.0.x to 8.6.3 in the next couple of months, and they literally did that within an afternoon. Amazing.
+That's it for now, figure out the other libraries yourself. It would obviously be great to have more. For example to have [`wreq`](https://hackage.haskell.org/package/wreq) to make network requests, or some graphics package do create images or draw on the DOM. With a bit of luck and enough interest I'm sure repl.it can be convinced to include more packages. Before discovering all this, I messaged them on their [twitter](https://twitter.com/replit) to ask if they could update GHC from 8.0.x to 8.6.3 in the coming year, and they literally did it within an afternoon. Amazing.
 
-What next? Use `haskeline` and go write a clone of [Zork](https://en.wikipedia.org/wiki/Zork)! Make some other cool things, share them on [r/haskell](https://old.reddit.com/r/haskell/), and/or come ask questions in the #haskell channel on the [functional programming discord](https://discord.me/fp).
+What next? Use [`haskeline`](https://hackage.haskell.org/package/haskeline) and go write a clone of [Zork](https://en.wikipedia.org/wiki/Zork)! Make some other cool things, share them on [r/haskell](https://old.reddit.com/r/haskell/), and/or come ask questions in the #haskell channel on the [functional programming discord](https://discord.me/fp).
 
