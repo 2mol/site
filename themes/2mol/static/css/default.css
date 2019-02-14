@@ -56,3 +56,15 @@ margin-left: -20px;
 margin-right: 10px;
 }
 
+.post-date {
+  font-size: 90%;
+  text-align: right;
+  /* font-family: monospace; */
+  vertical-align: bottom;
+}
+
+.post-link {
+  font-size: 95%;
+  vertical-align: bottom;
+}
+
