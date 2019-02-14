@@ -4,10 +4,7 @@ date: 2019-02-13T15:16:55Z
 draft: true
 ---
 
-# Build Haskell stuff in your browser
-
-
-## Too long; didn't read
+## tl;dr
 
 - You can write and execute non-trivial Haskell on [repl.it](https://repl.it/), meaning that you can skip setting up a local development environment.
 - It secretly includes not just `base`, but couple of other useful libraries.
@@ -20,9 +17,9 @@ For those that don't know, [repl.it](https://repl.it) is one of many online [REP
 
 Repl.it great, not least because it started providing a [Haskell environment](https://repl.it/site/blog/haskell) two years ago.
 
-> *Sidenote*: I was skeptical of online programming environments at first, since they seemed toy-like. However, a) young kids are building really impressive things in them and b) I intinctively started reaching for one myself for quick demos and experiments. Beginners can still install stack or cabal afterwards, no rush.
+> sidenote: I was skeptical of online programming environments at first, since they seemed toy-like. However, a) young kids are building really impressive things in them and b) I intinctively started reaching for one myself for quick demos and experiments. Beginners can still install stack or cabal afterwards, no rush.
 >
-> *Side-sidenote*: repl.it has this feature where multiple people can join the same editor and all edit at the same time, which is insanely cool. Get some friends and click the "multiplayer" button.
+> side-sidenote: repl.it has this feature where multiple people can join the same editor and all edit at the same time, which is insanely cool. Get some friends and click the "multiplayer" button.
 
 
 ## The libraries nobody told you about
