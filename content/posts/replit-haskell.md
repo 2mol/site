@@ -7,7 +7,7 @@ draft: true
 ## tl;dr
 
 - You can write and execute non-trivial Haskell on [repl.it](https://repl.it/), meaning that you can skip setting up a local development environment.
-- It secretly includes not just `base`, but couple of other useful libraries.
+- The environment secretly includes not just `base`, but couple of other useful libraries.
 - You can write command-line programs and have them _automatically_ served up on the web.
 
 
@@ -30,7 +30,7 @@ Ok, back to the Haskell environment. Unfortunately it's not clear which packages
 
 Explanation: `:!` is a ghci command that lets you execute anything in the shell that you have permissions to. Since we can reasonably guess that each repl is just some environment running in a docker container, we just do `:! which ghci` and `:! ls -l something` often enough until we find the `lib` folder.
 
-> I came across this in a [list of all ghci commands](https://downloads.haskell.org/~ghc/7.4.1/docs/html/users_guide/ghci-commands.html), hoping that there is a command that lets you just list the modules available for import in ghci. No such luck, but executing arbitrary shell commands is nice too. Let me know if there is more up-to date documentation anywhere, this is for GHC 7.4.
+> I came across this in a [list of all ghci commands](https://downloads.haskell.org/~ghc/7.4.1/docs/html/users_guide/ghci-commands.html), hoping that there is a command that lets you just list the modules available for import in ghci. No such luck, but executing arbitrary shell commands is nice too. Let me know if there is more up-to date documentation anywhere (the above is for GHC 7.4).
 
 Cleaning out some non-library files we find that we have access to the following:
 
@@ -63,13 +63,12 @@ xhtml-3000.2.2.1
 
 FUN. I don't know about you, but at this point I get pretty excited, since this means that we can write a lot more serious stuff than I had initially realized.
 
-For example, we can write entire interactive command-line programs that repl.it will serve on those `https://[replname].[username].repl.run` domains. I immediately thought of using `haskeline` to write an clone of [Zork](https://en.wikipedia.org/wiki/Zork).
-
+For example, we can write entire interactive command-line programs that repl.it will serve on those `https://[replname].[username].repl.run` domains.
 Just some of the basic highlights:
 
 - The great `containers` lets you use `Set`, `Map`, `Graph`, and `Tree`. The first two are especially nice if you're used to dictionaries and sets from other languages.
 - The low-level `array` gives you a structure that is faster than list for accessing elements at an arbitrary index.
-- `parsec` is your entry ticket into the world of ~parser-combinators~ INDUSTRIAL-STRENGTH PARSER COMBINATORS.
+- `parsec` is your entry ticket into the world of ~~parser-combinators~~ INDUSTRIAL-STRENGTH PARSER COMBINATORS.
 - `text` and `bytestring` replace `String` as the proper way to do either user-readable strings or binary data respectively.
 - `mtl` is how [people cooler than me](https://www.parsonsmatt.org/2018/03/22/three_layer_haskell_cake.html) structure big-boy programs.
 - `template-haskell` is how you write Haskell that writes Haskell.
@@ -77,5 +76,5 @@ Just some of the basic highlights:
 
 That's it for now. It would be great to have more libraries of course. For example to have `wreq` to make network requests, or some sort of graphics package would go a long way to make more useful programs. With a bit of luck and enough interest I'm sure repl.it can be convinced to include more packages. For example, I asked them over [twitter](https://twitter.com/replit) if they could update GHC from 8.0.x to 8.6.3 in the next couple of months, and they literally did that within an afternoon. Amazing.
 
-Go make some cool things, share them on [r/haskell](https://old.reddit.com/r/haskell/), and/or come ask questions in the #haskell channel on the [functional programming discord](https://discord.me/fp).
+What next? Use `haskeline` and go write a clone of [Zork](https://en.wikipedia.org/wiki/Zork)! Make some other cool things, share them on [r/haskell](https://old.reddit.com/r/haskell/), and/or come ask questions in the #haskell channel on the [functional programming discord](https://discord.me/fp).
 
