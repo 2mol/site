@@ -4,7 +4,7 @@ date: 2019-02-13T15:16:55Z
 draft: true
 ---
 
-Testing syntax the highlighting.
+Testing `syntax` the highlighting.
 
 ## Haskell
 

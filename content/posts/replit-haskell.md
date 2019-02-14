@@ -18,11 +18,11 @@ draft: true
 
 For those that don't know, [repl.it](https://repl.it) is one of many online [REPLs](https://en.wikipedia.org/wiki/REPL) that have cropped up in recent years. Generally you can (for various programming languages) type in some commands, have them executed by whatever interpreter, save code in files/modules, build interactive programs, create websites, etc.
 
-Repl.it is my favourite, in part because it's very well executed, in part because it started providing a [Haskell environment](https://repl.it/site/blog/haskell) early on.
+Repl.it great, not least because it started providing a [Haskell environment](https://repl.it/site/blog/haskell) two years ago.
 
-> Sidenote: I was very skeptical at first because an online programming environment doesn't seem Very Serious(TM). After finding myself using it for quick teaching demos and experiments, I've come around to the realization that it's actually _amazing_ to just get started coding without having to set anything up. Especially for beginners. You can still install stack or cabal afterwards, no rush.
+> *Sidenote*: I was skeptical of online programming environments at first, since they seemed toy-like. However, a) young kids are building really impressive things in them and b) I intinctively started reaching for one myself for quick demos and experiments. Beginners can still install stack or cabal afterwards, no rush.
 >
-> Side-sidenote: Even better, multiple people can join the same editor together and all edit at the same time, which is insanely cool. Get some friends and click the "multiplayer" button.
+> *Side-sidenote*: repl.it has this feature where multiple people can join the same editor and all edit at the same time, which is insanely cool. Get some friends and click the "multiplayer" button.
 
 
 ## The libraries nobody told you about
@@ -33,11 +33,11 @@ Ok, back to the Haskell environment. Unfortunately it's not clear which packages
 
 Explanation: `:!` is a ghci command that lets you execute anything in the shell that you have permissions to. Since we can reasonably guess that each repl is just some environment running in a docker container, we just do `:! which ghci` and `:! ls -l something` often enough until we find the `lib` folder.
 
-> Sidenote: I came across this in a [list of all ghci commands](https://downloads.haskell.org/~ghc/7.4.1/docs/html/users_guide/ghci-commands.html), hoping that there is a command that lets you just list the modules available for import in ghci. No such luck, but executing arbitrary shell commands is nice too. Let me know if there is more up-to date documentation anywhere, this is for GHC 7.4.
+> I came across this in a [list of all ghci commands](https://downloads.haskell.org/~ghc/7.4.1/docs/html/users_guide/ghci-commands.html), hoping that there is a command that lets you just list the modules available for import in ghci. No such luck, but executing arbitrary shell commands is nice too. Let me know if there is more up-to date documentation anywhere, this is for GHC 7.4.
 
 Cleaning out some non-library files we find that we have access to the following:
 
-```
+```shell
 Cabal-2.4.0.1
 array-0.5.3.0
 base-4.12.0.0
@@ -66,7 +66,7 @@ xhtml-3000.2.2.1
 
 FUN. I don't know about you, but at this point I get pretty excited, since this means that we can write a lot more serious stuff than I had initially realized.
 
-For example, we can write entire interactive command-line programs that repl.it will serve on those https://[replname].[username].repl.run domains. I immediately thought of using `haskeline` to write an clone of [Zork](https://en.wikipedia.org/wiki/Zork).
+For example, we can write entire interactive command-line programs that repl.it will serve on those `https://[replname].[username].repl.run` domains. I immediately thought of using `haskeline` to write an clone of [Zork](https://en.wikipedia.org/wiki/Zork).
 
 Just some of the basic highlights:
 
@@ -76,7 +76,7 @@ Just some of the basic highlights:
 - `text` and `bytestring` replace `String` as the proper way to do either user-readable strings or binary data respectively.
 - `mtl` is how [people cooler than me](https://www.parsonsmatt.org/2018/03/22/three_layer_haskell_cake.html) structure big-boy programs.
 - `template-haskell` is how you write Haskell that writes Haskell.
-- `filepath` and `directory` let you interact with the file system, which repl.it _totally let's you do_!
+- `filepath` and `directory` let you interact with the file system, which repl.it _totally lets you do_!
 
 That's it for now. It would be great to have more libraries of course. For example to have `wreq` to make network requests, or some sort of graphics package would go a long way to make more useful programs. With a bit of luck and enough interest I'm sure repl.it can be convinced to include more packages. For example, I asked them over [twitter](https://twitter.com/replit) if they could update GHC from 8.0.x to 8.6.3 in the next couple of months, and they literally did that within an afternoon. Amazing.
 
