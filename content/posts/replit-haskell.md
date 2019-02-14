@@ -62,9 +62,9 @@ xhtml-3000.2.2.1
 
 FUN. I don't know about you, but at this point I get pretty excited, since this means that we can write a lot more serious stuff than I had initially realized.
 
-For example, we can write entire interactive command-line programs that repl.it will serve on those `https://[replname].[username].repl.run` domains. [Here](https://haskeline-example.2mol.repl.run/) is an example I copied from the `haskeline` documentation.
+For example, we can write entire interactive command-line programs that repl.it will automatically serve up at `https://[replname].[username].repl.run`. [Here](https://haskeline-example.2mol.repl.run/) is an example I just copy-pasted from the [`haskeline`](https://hackage.haskell.org/package/haskeline) documentation.
 
-If you're not familiar with the libraries above, here's an incomplete overview:
+If you're not familiar with the libraries above, here's an (incomplete) overview:
 
 - The great [`containers`](https://hackage.haskell.org/package/containers) lets you use `Set`, `Map`, `Graph`, and `Tree`. The first two are especially nice if you're used to dictionaries and sets from other languages.
 - The low-level [`array`](https://hackage.haskell.org/package/array) gives you a structure that is faster than list for accessing elements at an arbitrary index.
@@ -80,7 +80,7 @@ With enough interest I'm sure repl.it can be convinced to include more packages.
 
 ## What now?
 
-Build stuff, now that you have no more excuses. Work through the exercises from [Haskell Programming from first principles](http://haskellbook.com/) (paid, but very worth it), or [Learn You a Haskell](http://learnyouahaskell.com/) (free and utterly charming).
+Now that you have no more excuses, I guess you just have to go and build stuff. If you're a newbie, then work through the exercises from [Haskell Programming from first principles](http://haskellbook.com/) (paid, but very worth it), or [Learn You a Haskell](http://learnyouahaskell.com/) (free and utterly charming).
 
 Use [`haskeline`](https://hackage.haskell.org/package/haskeline) and go write a clone of [Zork](https://en.wikipedia.org/wiki/Zork). Do whatever! Share what you make on [r/haskell](https://old.reddit.com/r/haskell/), and come ask questions in the #haskell channel on the [functional programming discord](https://discord.me/fp).
 
