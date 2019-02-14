@@ -1,5 +1,5 @@
 ---
-title: "Build Haskell stuff in your browser "
+title: "Build Haskell stuff in your browser"
 date: 2019-02-13T15:16:55Z
 ---
 
