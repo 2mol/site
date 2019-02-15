@@ -91,7 +91,7 @@ If you're not familiar with the libraries above, here's an (incomplete) overview
 - [`parsec`](https://hackage.haskell.org/package/parsec) is your entry ticket into the world of ~~parser-combinators~~ INDUSTRIAL-STRENGTH PARSER COMBINATORS.
 - [`text`](https://hackage.haskell.org/package/text) and [`bytestring`](https://hackage.haskell.org/package/bytestring) replace `String` as the proper way to do either user-readable strings or binary data respectively.
 - [`mtl`](https://hackage.haskell.org/package/mtl) is how [people cooler than me](https://www.parsonsmatt.org/2018/03/22/three_layer_haskell_cake.html) structure big-boy programs.
-- [`template-haskell`](https://hackage.haskell.org/package/template-haskell) is how you write Haskell that writes Haskell.
+- [`template-haskell`](https://hackage.haskell.org/package/template-haskell) is how you write Haskell that ~~writes Haskell~~ creates [splices](https://en.wikipedia.org/wiki/Splice_(film)), which is metaprogramming and probably nice.
 - [`filepath`](https://hackage.haskell.org/package/filepath) and [`directory`](https://hackage.haskell.org/package/directory) let you interact with the file system, which repl.it _totally lets you do_!
 
 That's it for now, figure out the other libraries yourself. It would obviously be great to have more. For example to have [`wreq`](https://hackage.haskell.org/package/wreq) to make network requests, or some graphics package to create images or draw on the DOM.
@@ -142,7 +142,7 @@ entropy xs =
 
 [^1]: Your `main` function will be run in a little pseudo-terminal, so all your ~~dumb~~ adorable little `putStrLn` and `getLine` will print text or wait for user input. You can't pass arguments or flags to your program tough, since you don't control stdin. It has to be interactive with something like `getLine`.
 
-[^2]: We also have our very own [Haskell Kernel](https://github.com/gibiansky/IHaskell) currently maintained by total champion [Vaibhav Sagar](https://github.com/vaibhavsagar). It's all there, but more help is needed to remove some frictions for beginners, like a noob-friendly install experience and more cool [tutorials](https://www.youtube.com/watch?v=gR8LdlrEFnM).
+[^2]: We also have our very own [Haskell Kernel](https://github.com/gibiansky/IHaskell) currently maintained by total champion [Vaibhav Sagar](https://github.com/vaibhavsagar). It's all there, but more help is needed to remove some frictions for beginners, like a noob-friendly install experience and more cool [tutorials](https://www.youtube.com/watch?v=gR8LdlrEFnM). EDIT: I'm being informed on reddit that you can actually [use IHaskell online](https://mybinder.org/v2/gh/gibiansky/IHaskell/master).
 
 [^3]: Get it? JuPytR!
 

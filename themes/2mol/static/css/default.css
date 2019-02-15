@@ -77,3 +77,7 @@ li {
   text-decoration: none;
 }
 
+.screen-fill {
+  height: 100vh;
+}
+
