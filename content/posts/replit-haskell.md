@@ -5,74 +5,84 @@ date: 2019-02-13
 
 ## tl;dr
 
-- In my optinion more Haskell people should know/care about online development environments.
+- In my optinion more Haskell people should play around with online dev environments.
 - You can write and execute non-trivial Haskell on [repl.it](https://repl.it/) (I'm not affiliated with them).
 - That environment secretly includes not just `base`, but couple of other useful libraries.
-- You can write interactive command-line programs and have them automagically served up on the web![^1]
+- You can write interactive command-line programs and have them automagically served up on the web.[^1]
 
 
 ## What's an online REPL?
 
-In case you don't already know, there has been a surge of online programming environments in recent years, most notably [interactive notebooks](https://en.wikipedia.org/wiki/Notebook_interface) and [REPLs](https://en.wikipedia.org/wiki/REPL). This stuff is really popular the webdev and data science communities.
+In case you don't already know, there has been a surge of online programming environments in recent years, most notably [interactive notebooks](https://en.wikipedia.org/wiki/Notebook_interface) and [REPLs](https://en.wikipedia.org/wiki/REPL). This stuff is really popular the webdev and data science communities[^4].
 
 The idea is that you can type in some commands, have them executed by whatever interpreter, write code in files/modules, build interactive programs, create visualizations, entire websites, and so on.
 
 Here are the major examples I can think of for various languages:
 
-- [Ellie](https://ellie-app.com/) for Elm. Sidenote: Elm is amazing!
-- [Observable](https://observablehq.com/), focused on creating notebooks and interactive visualizations. Seriously, if you're a JavaScript hater, go look at [these][torus] [utterly cool][sounds] [things][fisheye] and reconsider.
-- [Jupyter](https://jupyter.org/try) - this is the big badass one that you can use if you happen to be measuring [gravitational waves][gravitational-waves]. First-class supported languages[^2] are **Ju**lia, **Pyt**hon, and **R**[^3].
-- [Glitch](https://glitch.com/), another JavaScript based one. I haven't extensively tried it, but it seems to bring happiness and joy to everybody using it.
+- [Ellie](https://ellie-app.com/) for Elm. (sidenote: Elm is SO much fun!)
+- [Observable](https://observablehq.com/), focused on creating notebooks and interactive visualizations. Seriously, if you're a JavaScript hater, go look at [these][torus] [utterly cool][sounds] [things][fisheye].
+- [Jupyter](https://jupyter.org/try) - this is the big badass one that you can use if you happen to be detecting [gravitational waves][gravitational-waves]. First-class supported languages[^2] are **Ju**lia, **Pyt**hon, and **R**[^3].
+- [Glitch](https://glitch.com/). Another JavaScript based one. I haven't extensively tried it, but it seems to bring happiness and joy to everybody using it.
+- [ClojureScript REPL](https://clojurescript.io/)
+- [repl.it](https://repl.it), supporting a bazillion languages.
 
-[repl.it](https://repl.it) is one of those, and it's is great not least because it started providing a [Haskell environment](https://repl.it/site/blog/haskell) two years ago.
+That last one is what this post is about. Repl.it is great for many reasons, not least because it started providing a [Haskell environment](https://repl.it/site/blog/haskell) two years ago.
 
-> sidenote: I was skeptical of online programming environments at first, since the idea sounds a bit gimmicky. I changed my mind after seeing how many children build really impressive things in them, and how joyful it feels to use one for quick demos and experiments. It's really easy to send somebody a code snippet that just executes, zero friction. Beginners can still install stack or cabal afterwards, no rush.
->
-> side-sidenote: repl.it has this feature where multiple people can join the same editor and all edit at the same time, which is insanely cool. Get some friends and click the "multiplayer" button.
+> sidenote: repl.it has this feature where multiple people can join the same editor and all edit at the same time, which is insanely cool. Get some friends and click the "multiplayer" button.
 
 
 ## The libraries nobody told you about
 
-Ok, back to the Haskell environment. Unfortunately it's not clear which packages apart from `base` are built in. Random guessing quickly shows that at least `containers` and `text` are available, but I couldn't find a complete list anywhere. Of course we won't let that stop us. After a bit of fiddling and exploring:
+Unfortunately it's not clear which packages apart from `base` are built in. Random guessing quickly shows that at least `containers` and `text` are available, but I couldn't find a complete list anywhere. Of course we won't let that stop us. After a bit of fiddling and exploring:
 
-`:! ls -l /opt/ghc/8.6.3/lib/ghc-8.6.3/`
+~~`:! ls -l /opt/ghc/8.6.3/lib/ghc-8.6.3/`~~
 
-Explanation: `:!` is a ghci command that lets you execute anything in the shell that you have permissions to. Since we can reasonably guess that each repl is just some environment running in a docker container, we just do `:! which ghci` and `:! ls -l something` often enough until we find the `lib` folder.
+`:! ghc-pkg list`[^6]
 
-> I came across this in a [list of all ghci commands](https://downloads.haskell.org/~ghc/7.4.1/docs/html/users_guide/ghci-commands.html), hoping that there is a command that lets you just list the modules available for import in ghci. No such luck, but executing arbitrary shell commands is nice too. Let me know if there is more up-to date documentation anywhere (the above is for GHC 7.4).
+Explanation: `:!` is a ghci command[^5] that lets you execute whatever you want in the shell.
 
-Cleaning out some non-library files we find that we have access to the following:
+We can see that we have access to the following[^8] libraries:
 
 ```shell
-Cabal-2.4.0.1
-array-0.5.3.0
-base-4.12.0.0
-binary-0.8.6.0
-bytestring-0.10.8.2
-containers-0.6.0.1
-deepseq-1.4.4.0
-directory-1.3.3.0
-filepath-1.4.2.1
-haskeline-0.7.4.3
-hpc-0.6.0.3
-integer-gmp-1.0.2.0
-mtl-2.2.2
-parsec-3.1.13.0
-pretty-1.1.3.6
-process-1.6.3.0
-stm-2.5.0.0
-template-haskell-2.14.0.0
-terminfo-0.4.1.2
-text-1.2.3.1
-time-1.8.0.2
-transformers-0.5.5.0
-unix-2.7.2.2
-xhtml-3000.2.2.1
+/opt/ghc/8.6.3/lib/ghc-8.6.3/package.conf.d
+    Cabal-2.4.0.1
+    array-0.5.3.0
+    base-4.12.0.0
+    binary-0.8.6.0
+    bytestring-0.10.8.2
+    containers-0.6.0.1
+    deepseq-1.4.4.0
+    directory-1.3.3.0
+    filepath-1.4.2.1
+    (ghc-8.6.3)
+    ghc-boot-8.6.3
+    ghc-boot-th-8.6.3
+    ghc-compact-0.1.0.0
+    ghc-heap-8.6.3
+    ghc-prim-0.5.3
+    ghci-8.6.3
+    haskeline-0.7.4.3
+    hpc-0.6.0.3
+    integer-gmp-1.0.2.0
+    libiserv-8.6.3
+    mtl-2.2.2
+    parsec-3.1.13.0
+    pretty-1.1.3.6
+    process-1.6.3.0
+    rts-1.0
+    stm-2.5.0.0
+    template-haskell-2.14.0.0
+    terminfo-0.4.1.2
+    text-1.2.3.1
+    time-1.8.0.2
+    transformers-0.5.5.0
+    unix-2.7.2.2
+    xhtml-3000.2.2.1
 ```
 
 FUN. I don't know about you, but at this point I get pretty excited, since this means that we can write a lot more serious stuff than I had initially realized.
 
-For example, we can write entire interactive command-line programs that repl.it will automatically serve up at `https://[replname].[username].repl.run`. [Here](https://haskeline-example.2mol.repl.run/) is an example I just copy-pasted from the [`haskeline`](https://hackage.haskell.org/package/haskeline) documentation.
+For example, we can write entire interactive command-line programs that repl.it will automatically serve up at `https://[replname].[username].repl.run`. [Here](https://haskeline-example.2mol.repl.run/) you can play with an example I simply copy-pasted from the [`haskeline`](https://hackage.haskell.org/package/haskeline) documentation.
 
 If you're not familiar with the libraries above, here's an (incomplete) overview:
 
@@ -84,9 +94,9 @@ If you're not familiar with the libraries above, here's an (incomplete) overview
 - [`template-haskell`](https://hackage.haskell.org/package/template-haskell) is how you write Haskell that writes Haskell.
 - [`filepath`](https://hackage.haskell.org/package/filepath) and [`directory`](https://hackage.haskell.org/package/directory) let you interact with the file system, which repl.it _totally lets you do_!
 
-That's it for now, figure out the other libraries yourself. It would obviously be great to have more. For example to have [`wreq`](https://hackage.haskell.org/package/wreq) to make network requests, or some graphics package do create images or draw on the DOM.
+That's it for now, figure out the other libraries yourself. It would obviously be great to have more. For example to have [`wreq`](https://hackage.haskell.org/package/wreq) to make network requests, or some graphics package to create images or draw on the DOM.
 
-With enough interest I'm sure repl.it can be convinced to include more packages. Before discovering all this, I messaged them on their [twitter](https://twitter.com/replit) to ask if they could update GHC from 8.0.x to 8.6.3 in the coming year, and they literally did it within an afternoon. Amazing.
+With enough interest repl.it might be persuaded to include more packages. Before discovering all this, I messaged them on their [twitter](https://twitter.com/replit) to ask if they could update GHC from 8.0.x to 8.6.3 in the coming year, and they literally did it within an afternoon. Amazing.
 
 ## What now?
 
@@ -95,6 +105,8 @@ Now that you have no more excuses, I guess you just have to go and build stuff. 
 Use [`haskeline`](https://hackage.haskell.org/package/haskeline) and go write a clone of [Zork](https://en.wikipedia.org/wiki/Zork). Do whatever! Share what you make on [r/haskell](https://old.reddit.com/r/haskell/), and come ask questions in the #haskell channel on the [functional programming discord](https://discord.me/fp).
 
 Here is a code snippet so that you don't get bored in the meantime. Save it into a new file in repl.it, hit run and load up the module with something like `:l Entropy.hs`.
+
+Do you have the right intuition for what has high or low entropy? I didn't.
 
 ```haskell
 {-# LANGUAGE ScopedTypeVariables #-}
@@ -130,9 +142,19 @@ entropy xs =
 
 [^1]: Your `main` function will be run in a little pseudo-terminal, so all your ~~dumb~~ adorable little `putStrLn` and `getLine` will print text or wait for user input. You can't pass arguments or flags to your program tough, since you don't control stdin. It has to be interactive with something like `getLine`.
 
-[^2]: We also have our very own [Haskell Kernel](https://github.com/gibiansky/IHaskell) currently maintained by utter MVP champion [Vaibhav Sagar](https://github.com/vaibhavsagar). It's all there, but more help is needed to remove some frictions for beginners. Specifically a noob-friendly install experience and more cool [tutorials](https://www.youtube.com/watch?v=gR8LdlrEFnM).
+[^2]: We also have our very own [Haskell Kernel](https://github.com/gibiansky/IHaskell) currently maintained by total champion [Vaibhav Sagar](https://github.com/vaibhavsagar). It's all there, but more help is needed to remove some frictions for beginners, like a noob-friendly install experience and more cool [tutorials](https://www.youtube.com/watch?v=gR8LdlrEFnM).
 
 [^3]: Get it? JuPytR!
+
+[^4]: I was skeptical of online programming environments at first, since the idea sounds a bit gimmicky. I changed my mind[^7] after seeing how many children build really impressive things in them, and how joyful it feels to use one for quick demos and experiments. It's really easy to send somebody a code snippet that just executes, zero friction. Beginners can still install stack or cabal afterwards, no rush.
+
+[^7]: _meta-footnote_: Come to think of it, it was actually [https://tryhaskell.org/](https://tryhaskell.org/) that first exposed me to Haskell and made hyperactively excited towards this magical new language that I had just discovered.
+
+[^5]: I came across this in a [list of all ghci commands](https://downloads.haskell.org/~ghc/7.4.1/docs/html/users_guide/ghci-commands.html), hoping for one that lists all importable modules for a specific ghci session.
+
+[^6]: I didn't know about `ghc-pkg list`, but my friend [Nicolas](https://github.com/nmattia/) did.
+
+[^8]: Why precisely those? Turns out they are probably just the [core packages](https://ghc.haskell.org/trac/ghc/wiki/Commentary/Libraries/VersionHistory) that GHC ships with. Thanks again, Nicolas!
 
 [torus]: https://beta.observablehq.com/@renatoppl/torus-knots
 [sounds]: https://beta.observablehq.com/@freedmand/sounds
