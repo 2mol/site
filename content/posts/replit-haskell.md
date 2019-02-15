@@ -1,20 +1,30 @@
 ---
 title: "Build Haskell stuff in your browser"
-date: 2019-02-13T15:16:55Z
+date: 2019-02-13
 ---
 
 ## tl;dr
 
-- You can write and execute non-trivial Haskell on [repl.it](https://repl.it/), meaning that you can skip setting up a local development environment.
-- The environment secretly includes not just `base`, but couple of other useful libraries.
-- You can write command-line programs and have them _automatically_ served up on the web.
+- In my optinion more Haskell people should know/care about online development environments.
+- You can write and execute non-trivial Haskell on [repl.it](https://repl.it/) (I'm not affiliated with them).
+- That environment secretly includes not just `base`, but couple of other useful libraries.
+- You can write interactive command-line programs and have them automagically served up on the web![^1]
 
 
 ## What's an online REPL?
 
-For those that don't know, [repl.it](https://repl.it) is one of many online [REPLs](https://en.wikipedia.org/wiki/REPL) that have cropped up in recent years. Generally you can (for various programming languages) type in some commands, have them executed by whatever interpreter, save code in files/modules, build interactive programs, create websites, etc.
+In case you don't already know, there has been a surge of online programming environments in recent years, most notably [interactive notebooks](https://en.wikipedia.org/wiki/Notebook_interface) and [REPLs](https://en.wikipedia.org/wiki/REPL). This stuff is really popular the webdev and data science communities.
 
-Repl.it great, not least because it started providing a [Haskell environment](https://repl.it/site/blog/haskell) two years ago.
+The idea is that you can type in some commands, have them executed by whatever interpreter, write code in files/modules, build interactive programs, create visualizations, entire websites, and so on.
+
+Here are the major examples I can think of for various languages:
+
+- [Ellie](https://ellie-app.com/) for Elm. Sidenote: Elm is amazing!
+- [Observable](https://observablehq.com/), focused on creating notebooks and interactive visualizations. Seriously, if you're a JavaScript hater, go look at [these][torus] [utterly cool][sounds] [things][fisheye] and reconsider.
+- [Jupyter](https://jupyter.org/try) - this is the big badass one that you can use if you happen to be measuring [gravitational waves][gravitational-waves]. First-class supported languages[^2] are **Ju**lia, **Pyt**hon, and **R**[^3].
+- [Glitch](https://glitch.com/), another JavaScript based one. I haven't extensively tried it, but it seems to bring happiness and joy to everybody using it.
+
+[repl.it](https://repl.it) is one of those, and it's is great not least because it started providing a [Haskell environment](https://repl.it/site/blog/haskell) two years ago.
 
 > sidenote: I was skeptical of online programming environments at first, since the idea sounds a bit gimmicky. I changed my mind after seeing how many children build really impressive things in them, and how joyful it feels to use one for quick demos and experiments. It's really easy to send somebody a code snippet that just executes, zero friction. Beginners can still install stack or cabal afterwards, no rush.
 >
@@ -118,3 +128,13 @@ entropy xs =
     -sum [p * logBase 2 p | p <- proportions xs]
 ```
 
+[^1]: Your `main` function will be run in a little pseudo-terminal, so all your ~~dumb~~ adorable little `putStrLn` and `getLine` will print text or wait for user input. You can't pass arguments or flags to your program tough, since you don't control stdin. It has to be interactive with something like `getLine`.
+
+[^2]: We also have our very own [Haskell Kernel](https://github.com/gibiansky/IHaskell) currently maintained by utter MVP champion [Vaibhav Sagar](https://github.com/vaibhavsagar). It's all there, but more help is needed to remove some frictions for beginners. Specifically a noob-friendly install experience and more cool [tutorials](https://www.youtube.com/watch?v=gR8LdlrEFnM).
+
+[^3]: Get it? JuPytR!
+
+[torus]: https://beta.observablehq.com/@renatoppl/torus-knots
+[sounds]: https://beta.observablehq.com/@freedmand/sounds
+[fisheye]: https://beta.observablehq.com/@benmaier/a-visually-more-appealing-fisheye-function
+[gravitational-waves]: https://www.gw-openscience.org/s/events/GW150914/GW150914_tutorial.html
