@@ -154,7 +154,7 @@ entropy xs =
 
 [^6]: I didn't know about `ghc-pkg list`, but my friend [Nicolas](https://github.com/nmattia/) did.
 
-[^8]: Why precisely those? Turns out they are probably just the [core packages](https://ghc.haskell.org/trac/ghc/wiki/Commentary/Libraries/VersionHistory) that GHC ships with. Thanks again, Nicolas!
+[^8]: Why precisely those? Turns out they are probably just the [core packages](https://ghc.haskell.org/trac/ghc/wiki/Commentary/Libraries/VersionHistory) that GHC ships with. Again, thanks Nicolas!
 
 [torus]: https://beta.observablehq.com/@renatoppl/torus-knots
 [sounds]: https://beta.observablehq.com/@freedmand/sounds
