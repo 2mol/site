@@ -1,7 +1,11 @@
 {{ define "content" }}
   <h1 id="title">{{ .Title }}</h1>
+  <small>{{ .Date.Format "2006-01-02" }}</small>
   <article id="content">
-      {{ .Content }}
+    {{ .Content }}
   </article>
+  <center>~</center>
+  <div class="screen-fill"></div>
+  <small>hi there, well done with the scrolling! nothing more to see here. the blank space is so that jumping to footnotes doesn't suck.</small>
 {{ end }}
 
