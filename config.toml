@@ -6,3 +6,5 @@ theme="2mol"
 
 googleAnalytics="UA-134695331-1"
 
+[params]
+  githubURL="https://github.com/2mol/2mol.github.io"

@@ -10,8 +10,8 @@ body {
   padding: 0 10px
 }
 
-h1,h2,h3 {
-  line-height: 1.2
+h2,h3 {
+  margin-top:1.5em;
 }
 
 blockquote {
@@ -72,8 +72,15 @@ li {
   vertical-align: bottom;
 }
 
+.title {
+  margin-bottom: -0.5em;
+}
+
+.post-date-title {
+  font-family: monospace;
+}
+
 .footnote-return {
-  /* font-size: 10px; */
   text-decoration: none;
 }
 

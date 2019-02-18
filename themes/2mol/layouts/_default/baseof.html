@@ -11,6 +11,7 @@
     <script>hljs.initHighlightingOnLoad();</script><Paste>
     {{ template "_internal/google_analytics_async.html" . }}
   </head>
+  {{- partial "github-corner.html" . -}}
   <body>{{- block "content" . }}{{- end }}</body>
 </html>
 
