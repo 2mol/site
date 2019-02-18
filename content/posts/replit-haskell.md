@@ -148,7 +148,7 @@ entropy xs =
 
 [^4]: I was skeptical of online programming environments at first, since the idea sounds a bit gimmicky. I changed my mind[^7] after seeing how many children build really impressive things in them, and how joyful it feels to use one for quick demos and experiments. It's really easy to send somebody a code snippet that just executes, zero friction. Beginners can still install stack or cabal afterwards, no rush.
 
-[^7]: _meta-footnote_: Come to think of it, it was actually [https://tryhaskell.org/](https://tryhaskell.org/) that first exposed me to Haskell and made hyperactively excited towards this magical new language that I had just discovered.
+[^7]: _meta-footnote_: Come to think of it, it was actually [https://tryhaskell.org/](https://tryhaskell.org/) that first exposed me to Haskell and made me so excited about it.
 
 [^5]: I came across this in a [list of all ghci commands](https://downloads.haskell.org/~ghc/7.4.1/docs/html/users_guide/ghci-commands.html), hoping for one that lists all importable modules for a specific ghci session.
 
