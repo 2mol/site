@@ -7,6 +7,7 @@ devbuild: ## Watch for changes, build, and serve on localhost.
 deploy: ## Build, commit, and push to deployment target.
 	hugo
 	cd public/
+	pwd
 	git add *
 	git commit -m 'deploy'
 	git push
