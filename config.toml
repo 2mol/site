@@ -1,8 +1,11 @@
 baseURL = "https://2mol.github.io/"
 languageCode = "en-us"
 title = "not even a boat"
-
 theme="2mol"
+
+enableGitInfo=true
+
+disableKinds = ["taxonomy", "taxonomyTerm"]
 
 googleAnalytics="UA-134695331-1"
 
