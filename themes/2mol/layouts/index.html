@@ -1,7 +1,10 @@
 {{ define "content" }}
   <h1>not even a boat.</h1>
-  <h2>Posts</h2>
   <!-- TODO: structure this more logically -->
-  {{- partial "post-list.html" . -}}
   {{ .Content }}
+  <h2>Posts</h2>
+  {{- partial "post-list.html" . -}}
+  {{ with .Site.GetPage "/projects.md" }}{{ .Content }}{{ end }}
+  <div>last updated on {{ .GitInfo.AuthorDate.Format "2. January 2006" }}</div>
+  <small>{{ .GitInfo.Hash }}</small>
 {{ end }}

@@ -62,14 +62,7 @@ li {
 }
 
 .post-date {
-  font-size: 90%;
   text-align: right;
-  vertical-align: bottom;
-}
-
-.post-link {
-  font-size: 95%;
-  vertical-align: bottom;
 }
 
 .title {
