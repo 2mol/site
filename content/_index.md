@@ -1,4 +1,7 @@
-# NOT EVEN A BOAT
+---
+aliases:
+    - /posts/
+---
 
 ## Projects
 

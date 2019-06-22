@@ -1,13 +1,13 @@
 baseURL = "https://2mol.github.io/"
 languageCode = "en-us"
-title = "not even a boat"
-theme="2mol"
+title = "not even a boat."
+theme = "2mol"
 
-enableGitInfo=true
+enableGitInfo = true
 
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
-googleAnalytics="UA-134695331-1"
+googleAnalytics = "UA-134695331-1"
 
 [params]
-  githubURL="https://github.com/2mol/2mol.github.io"
+  githubURL = "https://github.com/2mol/"

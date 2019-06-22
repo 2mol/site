@@ -1,4 +1,7 @@
 {{ define "content" }}
-{{ .Content }}
-{{- partial "post-list.html" . -}}
+  <h1>not even a boat.</h1>
+  <h2>Posts</h2>
+  <!-- TODO: structure this more logically -->
+  {{- partial "post-list.html" . -}}
+  {{ .Content }}
 {{ end }}
