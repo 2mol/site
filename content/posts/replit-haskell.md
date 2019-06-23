@@ -28,7 +28,7 @@ Here are the major examples I can think of for various languages:
 
 That last one is what this post is about. Repl.it is great for many reasons, not least because it started providing a [Haskell environment](https://repl.it/site/blog/haskell) two years ago.
 
-> sidenote: repl.it has this feature where multiple people can join the same editor and all edit at the same time, which is insanely cool. Get some friends and click the "multiplayer" button.
+> sidenote: repl.it lets multiple people join the same editor and all edit at the same time, which is insanely cool. Get some friends and click the "multiplayer" button.
 
 
 ## The libraries nobody told you about

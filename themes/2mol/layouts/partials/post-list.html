@@ -1,11 +1,11 @@
 <table class="post-list">
 {{ with .Site.GetPage "/posts" }}
-{{ range .Pages.ByDate.Reverse }}
-  <tr>
-    <td class="post-date">{{ .Date.Format "2. January 2006" }}</td>
-    <td>―</td>
-    <td><a href="{{.Permalink}}">{{.Title}}</a></td>
-  </tr>
-{{ end }}
+  {{ range .Pages.ByDate.Reverse }}
+    <tr>
+      <td class="post-date">{{ .Date.Format "2. January 2006" }}</td>
+      <td>―</td>
+      <td><a href="{{.Permalink}}">{{.Title}}</a></td>
+    </tr>
+  {{ end }}
 {{ end }}
 </table>

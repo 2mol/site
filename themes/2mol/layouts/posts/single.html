@@ -1,0 +1,22 @@
+{{ define "content" }}
+  {{- $fileURL := print .Site.Params.githubEditURL .File -}}
+  <a href="{{ $fileURL }}" class="github-corner" aria-label="View source on GitHub">
+    {{- partial "github-corner.html" . -}}
+  </a>
+  <h1 class="title">{{ .Title }}</h1>
+  <small class="post-date-title">
+    published {{ .Date.Format "2006-01-02" }}, <a href="{{ $fileURL }}" >edit this post on github</a>
+  </small>
+  <article>
+    {{ .Content }}
+  </article>
+  <center>~</center>
+  <div class="screen-fill"></div>
+  <small>hi there, well done with the scrolling! nothing more to see here. the blank space is so that jumping to footnotes doesn't suck.</small>
+  <!-- {{ .GitInfo.AbbreviatedHash }}
+  {{ .GitInfo.AuthorName }}
+  {{ .GitInfo.AuthorEmail }}
+  {{ .GitInfo.AuthorDate }}
+  {{ .GitInfo.Hash }}
+  {{ .GitInfo.Subject }} -->
+{{ end }}

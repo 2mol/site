@@ -1,6 +1,6 @@
 baseURL = "https://2mol.github.io/"
 languageCode = "en-us"
-title = "not even a boat."
+title = "not even a boat"
 theme = "2mol"
 
 enableGitInfo = true
@@ -11,3 +11,5 @@ googleAnalytics = "UA-134695331-1"
 
 [params]
   githubURL = "https://github.com/2mol/"
+  githubEditURL = "https://github.com/2mol/site/edit/master/content/"
+  dateFormat = "2006-01-02"
