@@ -5,12 +5,26 @@ body {
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
   font-size: 16px;
-  color: #444;
+  color: rgb(26, 26, 26);
   padding: 0 10px
 }
 
 h2,h3 {
   margin-top:1.5rem;
+}
+
+span.back-arrow {
+  transform: rotate(180deg);
+  display: inline-block;
+  position: absolute;
+  left: 0.5rem;
+  top: -0.7rem;
+}
+
+.back-arrow > a {
+  font-size: 3rem;
+  text-decoration: none;
+  color:#444;
 }
 
 blockquote {
@@ -35,10 +49,10 @@ code {
   padding: 0.1rem 0.3rem;
 }
 
-a:link{
+a:link {
     color:#4078f1
 }
-a:visited{
+a:visited {
     color:#a625a4
 }
 

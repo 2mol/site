@@ -3,6 +3,7 @@
   <a href="{{ $fileURL }}" class="github-corner" aria-label="View source on GitHub">
     {{- partial "github-corner.html" . -}}
   </a>
+  <span class="back-arrow"><a href="/">➦</a></span>
   <h1 class="title">{{ .Title }}</h1>
   <small class="post-date-title">
     published {{ .Date.Format "2006-01-02" }}, <a href="{{ $fileURL }}" >edit this post on github</a>

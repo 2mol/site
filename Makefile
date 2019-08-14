@@ -7,7 +7,7 @@ watch:
 	hugo server -D
 ## Build, commit, and push to deployment target.
 deploy:
-	hugo && cd public/ && git commit -am 'deploy' && git push
+	hugo --minify && cd public/ && git commit -am 'deploy' && git push
 
 
 # COLORS
