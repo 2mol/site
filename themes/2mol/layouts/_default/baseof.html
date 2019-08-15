@@ -1,8 +1,12 @@
 <!doctype html>
 <html>
   <head>
-    {{ $title := print .Title " | " .Site.Title }}
-    {{ if .IsHome }}{{ $title = .Site.Title }}{{ end }}
+    {{ $title := "" }}
+    {{ if .IsHome }}
+      {{ $title = print .Site.Title " - blog and so on" }}
+    {{ else }}
+      {{ $title = print .Title " | " .Site.Title }}
+    {{ end }}
     <title>{{ $title }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0"/>

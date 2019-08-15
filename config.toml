@@ -1,6 +1,6 @@
 baseURL = "https://2mol.github.io/"
 languageCode = "en-us"
-title = "who watches the people watchers"
+title = "2mol"
 theme = "2mol"
 
 enableGitInfo = true

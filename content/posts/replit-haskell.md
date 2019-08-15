@@ -1,5 +1,5 @@
 ---
-title: "Build Haskell stuff in your browser"
+title: "Haskell REPL in your browser"
 date: 2019-02-13
 ---
 
@@ -11,7 +11,7 @@ date: 2019-02-13
 - You can write interactive command-line programs and have them automagically served up on the web.[^1]
 
 
-## What's an online REPL?
+## Why an online REPL?
 
 In case you don't already know, there has been a surge of online programming environments in recent years, most notably [interactive notebooks](https://en.wikipedia.org/wiki/Notebook_interface) and [REPLs](https://en.wikipedia.org/wiki/REPL). This stuff is really popular the webdev and data science communities[^4].
 
