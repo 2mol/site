@@ -81,6 +81,11 @@ ul li:before {
   margin-right: 10px;
 } */
 
+hr {
+  margin-top: 2.5rem;
+  border: 1px solid #ddd;
+}
+
 .footnotes > ol > li {
   margin-top: 0.5rem;
   font-size: 90%;

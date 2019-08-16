@@ -1,12 +1,9 @@
 ---
 title: "Building an Elm webapp"
 date: 2019-08-15T13:12:06+02:00
-draft: true
 ---
 
 # Why
-
-Hello!
 
 I recently started a new side-project that I'm very excited about. For this I need to write a single-page app, and since my front-end language of choice is Elm, I had to figure out the Elm-specific solutions and approaches to some of the common building blocks necessary for a SPA.
 
