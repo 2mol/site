@@ -10,7 +10,7 @@ body {
 }
 
 h2,h3 {
-  margin-top:1.5rem;
+  margin-top:2.5rem;
 }
 
 span.back-arrow {
@@ -36,7 +36,11 @@ blockquote {
 }
 
 blockquote > p {
-  margin: 0;
+  margin: 0rem;
+}
+
+blockquote > p:not(:first-child) {
+  margin-top: 1rem;
 }
 
 small {
@@ -44,8 +48,9 @@ small {
 }
 
 code {
-  color: #363636;
+  color: #140f01;
   background-color: #fff9b8;
+  border-radius: .25rem;
   padding: 0.1rem 0.3rem;
 }
 
@@ -71,12 +76,14 @@ ul {
 
 ul li:before {
   content: '»';
+  color: #aaaaaa;
   margin-left: -20px;
   margin-right: 10px;
 }
 
-li {
+.footnotes > ol > li {
   margin-top: 0.5rem;
+  font-size: 90%;
 }
 
 .post-date {
