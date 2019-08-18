@@ -5,13 +5,13 @@ date: 2019-08-15T13:12:06+02:00
 
 # Why
 
-I recently started a new side-project that I'm very excited about. For this I need to write a single-page app, and since my front-end language of choice is Elm, I had to figure out the Elm-specific solutions and approaches to some of the common building blocks necessary for a SPA.
+I recently started a new side-project for which I want to write a single-page app. Since my front-end language of choice is Elm, I had to figure out a lot of Elm-specific solutions and approaches to some of the common building blocks necessary for a SPA.
 
-I'm writing down the bits and pieces I had to solve along the way, in addition to some of the things I learned on previous projects. For reference, (apart from toy sites) I've only ever built one "simpler"[^1] side-project, and one thing I have running in production at work.
+I'm writing down the bits and pieces I had to solve along the way, in addition to some of the things I learned on previous projects. For reference, (apart from toy sites) I've only ever built one simpler[^1] side-project, and one thing I have running in production at work.
 
 I remember being confused about a bunch of specifics like url-routing, SPAs, the possible approaches to CSS/styling, ports, and a bunch more. My hope is that I can write something down while I still remember _why_ I was confused.
 
-It's really easy to stop understanding why the problem was non-obvious in the first place, once you solved it for yourself.
+I usually forget why the problem was non-obvious the second I solve it for myself
 
 > There are other great resources[^2], and I will link to them whenever they are better or complementary to my own explanations. One particular resource I come back to a bunch is of course the venerable [elm-spa-example](https://github.com/rtfeldman/elm-spa-example). This plus templates like [elm-batteries](https://github.com/cedricss/elm-batteries) and reading other people's code really helped me learn what I needed to know.
 >
@@ -46,4 +46,4 @@ That's it for now, you will find everything else in the individual posts. I hope
 
 [^3]: I'm not a JavaScript developer, so I'm a bit biased, i.e. the need for webpack and several dependencies from npm is not obvious to me. If we discover that putting Elm in production doesn't need this additional complexity, then I'd consider that a huge plus!
 
-[^4]: The Elm ecosystem currently has surprisingly bad [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization). When googling a core module or a package you often land on outdated versions or other irrelevant things. The weirdest example is that when you currently search for "elm markdown", _none_ of the top results point towards the official [elm-explorations/markdown](https://github.com/elm-explorations/markdown), see [screenshot](/elm-markdown-google.png) as of 2019-08-16. Maybe diving in on the reasons for this is a topic for a future post.
+[^4]: The Elm ecosystem currently has surprisingly bad [SEO](https://en.wikipedia.org/wiki/Search_engine_optimization). When googling a core module or a package you often land on outdated versions or other irrelevant things. The weirdest example is that when you currently search for "elm markdown", _none_ of the top results point towards the official [elm-explorations/markdown](https://github.com/elm-explorations/markdown), see [screenshot](/images/elm-markdown-google.png) as of 2019-08-16. Maybe diving in on the reasons for this is a topic for a future post.
