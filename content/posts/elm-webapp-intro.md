@@ -1,10 +1,9 @@
 ---
-title: "Building an Elm webapp"
+title: "Ingredients to building an Elm app"
 date: 2019-08-15T13:12:06+02:00
 draft: true
 ---
 
-# Why
 
 I recently started a new side-project for which I want to write a single-page app. Since my front-end language of choice is Elm, I had to figure out a lot of Elm-specific solutions and approaches to some of the common building blocks necessary for a SPA.
 
@@ -18,7 +17,7 @@ I usually forget why the problem was non-obvious the second I solve it for mysel
 >
 > **However**, there is no way getting around trying to digest the fundamental ideas listed below, since **a)** I feel the need to really grasp what is happening under the hood and **b)** I want to strip my stack down to only the things I really need.[^3]
 
-# What
+# How
 
 Here are the various questions that you might come across at some point. I will try to cover each of these with a short post:
 
