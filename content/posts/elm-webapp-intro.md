@@ -1,6 +1,7 @@
 ---
 title: "Building an Elm webapp"
 date: 2019-08-15T13:12:06+02:00
+draft: true
 ---
 
 # Why
