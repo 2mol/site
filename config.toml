@@ -1,4 +1,4 @@
-baseURL = "https://2mol.github.io/"
+baseURL = "https://2mol.netlify.com/"
 languageCode = "en-us"
 title = "2mol"
 theme = "2mol"

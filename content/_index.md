@@ -1,1 +1,1 @@
-Hi! How are you today?
+Hi there!
